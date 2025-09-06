@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica Futurista</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="header">
+                <h1>CURIEL <span>SCI-CALC</span></h1>
+                <div class="toggle-buttons">
+                    <button id="toggle-dark-mode"><i class="fas fa-moon"></i></button>
+                    <button id="toggle-memory"><i class="fas fa-memory"></i></button>
+                </div>
+            </div>
+            <div class="display">
+                <div class="previous-operations" id="history-display"></div>
+                <div class="current-operation" id="display">0</div>
+            </div>
+            <div class="buttons">
+                <!-- Funciones trigonométricas -->
+                <button class="btn function" data-value="sin(">sin</button>
+                <button class="btn function" data-value="cos(">cos</button>
+                <button class="btn function" data-value="tan(">tan</button>
+                <button class="btn function" data-value="asin(">asin</button>
+                <button class="btn function" data-value="acos(">acos</button>
+
+                <!-- Funciones avanzadas -->
+                <button class="btn function" data-value="atan(">atan</button>
+                <button class="btn function" data-value="sqrt(">√</button>
+                <button class="btn function" data-value="cbrt(">∛</button>
+                <button class="btn function" data-value="log(">log</button>
+                <button class="btn function" data-value="ln(">ln</button>
+
+                <!-- Potencias y constantes -->
+                <button class="btn function" data-value="^">x^y</button>
+                <button class="btn function" data-value="factorial">x!</button>
+                <button class="btn function" data-value="pi">π</button>
+                <button class="btn function" data-value="e">e</button>
+                <button class="btn function" data-value="clear">C</button>
+
+                <!-- Paréntesis y borrar -->
+                <button class="btn function" data-value="(">(</button>
+                <button class="btn function" data-value=")">)</button>
+                <button class="btn function" data-value="backspace">⌫</button>
+                <button class="btn operator" data-value="/">÷</button>
+                <button class="btn operator" data-value="*">×</button>
+
+                <!-- Números y operadores -->
+                <button class="btn number" data-value="7">7</button>
+                <button class="btn number" data-value="8">8</button>
+                <button class="btn number" data-value="9">9</button>
+                <button class="btn operator" data-value="-">-</button>
+                <button class="btn operator" data-value="+">+</button>
+
+                <!-- Más números y operadores -->
+                <button class="btn number" data-value="4">4</button>
+                <button class="btn number" data-value="5">5</button>
+                <button class="btn number" data-value="6">6</button>
+                <button class="btn function" data-value="%">%</button>
+                <button class="btn function" data-value="10^">10^x</button>
+
+                <!-- Últimos números y funciones -->
+                <button class="btn number" data-value="1">1</button>
+                <button class="btn number" data-value="2">2</button>
+                <button class="btn number" data-value="3">3</button>
+                <button class="btn function" data-value="rand">rand</button>
+                <button class="btn operator" data-value="=">=</button>
+
+                <!-- Cero, punto y memoria -->
+                <button class="btn number" data-value="0">0</button>
+                <button class="btn number" data-value=".">.</button>
+                <button class="btn memory" data-value="mc">MC</button>
+                <button class="btn memory" data-value="mr">MR</button>
+                <button class="btn memory" data-value="m+">M+</button>
+
+                <!-- Funciones hiperbólicas -->
+                <button class="btn function" data-value="sinh(">sinh</button>
+                <button class="btn function" data-value="cosh(">cosh</button>
+                <button class="btn function" data-value="tanh(">tanh</button>
+                <button class="btn memory" data-value="m-">M-</button>
+            </div>
+        </div>
+        <div class="history">
+            <div class="history-header">
+                <h2>Historial</h2>
+                <div class="history-buttons">
+                    <button id="clear-history"><i class="fas fa-trash"></i></button>
+                    <button id="save-history-pdf"><i class="fas fa-file-pdf"></i></button>
+                </div>
+            </div>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+    <script src="java/script.js"></script>
+</body>
+</html>
